@@ -1,0 +1,167 @@
+.product-page {
+    width: 100%;
+    padding: 30px;
+    padding-top: 60px;
+}
+
+.top-section {
+    display: flex;
+    gap: 40px;
+}
+
+.gallery-container {
+    width: 50%;
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.main-image-box{
+    width: 400px;
+    height: 430px;    
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    width: 40%;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.extra-info{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.qty-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.add-btn {
+    padding: 12px 25px;
+    border: 1px solid black;
+    background: black;
+    color: white;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.tag {
+    margin-left: 5px;
+    background: #eee;
+    padding: 4px 8px;
+    border-radius: 3px;
+}
+
+.tabs {
+    margin-top: 40px;
+}
+
+.tab-buttons button {
+    margin-right: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 16px;
+}
+
+.related {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.related-row {
+    display: flex;
+    gap: 20px;
+}
+
+.related-card {
+    height: 300px;
+    width: 280px;
+    text-align: center;
+}
+
+.related-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.add-btn {
+    background-color: black;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #333;
+}
+
+.wishlist-btn {
+    background-color: transparent;
+    color: black;
+    padding: 12px 25px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.wishlist-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .add-btn,
+    .wishlist-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
