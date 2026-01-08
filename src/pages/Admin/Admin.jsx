@@ -82,7 +82,6 @@ const Admin = () => {
       if (editItem) {
         const { id, category: originalCategory } = editItem;
 
-        // ❗ DO NOT allow category change (avoids cross-collection 404)
         await axios.put(`/${originalCategory}/${id}`, payload);
 
         setTableData((prev) =>
