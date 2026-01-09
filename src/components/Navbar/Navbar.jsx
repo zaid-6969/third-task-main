@@ -21,7 +21,7 @@ export const AdminNav = () => {
       <div className="nav">
         <ul className="ul1">
           <li>
-            <h1 style={{ color: "black" }}>soudemy</h1>
+            <h1 style={{ color: "black" , height: "55px" }}>soudemy</h1>
           </li>
           <AppNavLink to="/admin" label="Admin" />
           <AppNavLink to="/admintable" label="Product List" />

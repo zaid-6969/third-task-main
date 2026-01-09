@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "../../api/axios";
 import { useNavigate } from "react-router-dom";
 import "./AdminTable.css";
+import { MdDeleteForever } from "react-icons/md";
+import { FiEdit } from "react-icons/fi";
+
 
 const AdminTable = () => {
   const navigate = useNavigate();
@@ -145,13 +148,13 @@ const AdminTable = () => {
                       navigate("/admin", { state: { item } })
                     }
                   >
-                    Edit
+                   <span style={{fontSize:'13px'}}> <FiEdit /> </span>Edit
                   </button>
                   <button
                     className="delete-btn"
                     onClick={() => handleDelete(item)}
                   >
-                    Delete
+                   <span style={{fontSize:'15px'}}><MdDeleteForever /></span>  Delete
                   </button>
                 </td>
               </tr>

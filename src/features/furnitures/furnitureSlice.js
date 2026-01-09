@@ -6,11 +6,8 @@ import {
   getLamps,
 } from "../../api/furnitureApi";
 
-/* ----------------------------------
-   ASYNC THUNKS (FETCH ONLY)
------------------------------------ */
+    // fetching api 
 
-// 🔹 Fetch all furniture from APIs
 export const fetchFurniture = createAsyncThunk(
   "furniture/fetchFurniture",
   async () => {
@@ -30,9 +27,6 @@ export const fetchFurniture = createAsyncThunk(
   }
 );
 
-/* ----------------------------------
-   SLICE
------------------------------------ */
 
 const furnitureSlice = createSlice({
   name: "furniture",
@@ -42,13 +36,13 @@ const furnitureSlice = createSlice({
     error: null,
   },
 
+  // admin api fetching
+
   reducers: {
-    // ✅ ADMIN ADD (NO API CALL HERE)
     addProduct: (state, action) => {
       state.products.push(action.payload);
     },
 
-    // ✅ OPTIONAL: ADMIN UPDATE (LOCAL STATE ONLY)
     updateProduct: (state, action) => {
       const { id, category, data } = action.payload;
 
@@ -64,7 +58,6 @@ const furnitureSlice = createSlice({
       }
     },
 
-    // ✅ OPTIONAL: ADMIN DELETE (LOCAL STATE ONLY)
     deleteProduct: (state, action) => {
       const { id, category } = action.payload;
 
@@ -76,7 +69,6 @@ const furnitureSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-      // FETCH
       .addCase(fetchFurniture.pending, (state) => {
         state.loading = true;
       })
