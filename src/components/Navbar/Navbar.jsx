@@ -72,9 +72,9 @@ const selector = useSelector((state) => state.cart.value )
           <FiSearch />
         </li>
         <li>
-          <NavLink to="/cart">
+          <NavLink to="/cart" onClick={()=>dispatch(clearAll())}>
               <span style={{position:'absolute' , top:'18px',right:'113px' , background:'red', borderRadius:'55px',fontSize:'13px',color:'white',padding:'2px' }} >{selector}</span>
-            <BsBag style={{ color: "grey" }} onClick={()=>dispatch(clearAll())} />
+            <BsBag style={{ color: "grey" }}  />
           </NavLink>
         </li>
         <li>
