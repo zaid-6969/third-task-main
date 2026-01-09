@@ -393,15 +393,20 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  input{
+
+  input {
     width: 100%;
     color: black;
-    background-color: black;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
+
+    /* 🔥 IMPORTANT */
+    accent-color: transparent;
+    background-color: transparent;
   }
 }
+
 
 .price-filter input[type="range"] {
   -webkit-appearance: none;

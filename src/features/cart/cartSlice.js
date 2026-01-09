@@ -5,22 +5,28 @@ const savedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: savedCart, 
+    items: savedCart,
+    value: 0,
   },
 
   reducers: {
     addToCart: (state, action) => {
       const item = action.payload;
-
       const existing = state.items.find((p) => p.id === item.id);
 
       if (existing) {
         existing.quantity += 1;
+        state.value += 1;   // ✅ FIX
       } else {
         state.items.push({ ...item, quantity: 1 });
+        state.value += 1;   // ✅ FIX
       }
 
       localStorage.setItem("cartItems", JSON.stringify(state.items));
+    },
+
+    clearAll:(state)=>{
+     state.value = 0 ;
     },
 
     removeFromCart: (state, action) => {
@@ -52,6 +58,7 @@ const cartSlice = createSlice({
 });
 
 export const {
+  clearAll,
   addToCart,
   removeFromCart,
   increaseQty,

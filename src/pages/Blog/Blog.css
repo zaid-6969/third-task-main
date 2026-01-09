@@ -164,6 +164,12 @@ body {
     gap: 0px;
 }
 
+@media (max-width: 990px) {
+  .blog-left{
+      width: 100%;
+  }
+}
+
 .blog-card {
   margin-bottom: 40px;
 }

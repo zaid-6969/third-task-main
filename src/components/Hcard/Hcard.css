@@ -1,73 +1,79 @@
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .hcard {
-    margin-top  : 40px;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    gap: 10px;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    background-color: white;
-    color: black;
-
-    h1 {
-        font-size: 40px;
-    }
-
-    p {
-        width: 35%;
-        text-align: center;
-        font-size: 15px;
-        color: #9b9b9b;
-    }
+  margin-top: 40px;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  color: black;
 }
 
-#span{
-    color: #6f6f6f;
-    position: relative;
-    top: 40px;
-    right: 80px;
+.hcard h1 {
+  font-size: 40px;
+}
+
+.hcard p {
+  width: 35%;
+  text-align: center;
+  font-size: 15px;
+  color: #9b9b9b;
+}
+
+#span {
+  color: #6f6f6f;
+  position: relative;
+  top: 40px;
+  right: 80px;
 }
 
 .cards {
-    width: 82%;
-    height: 80vh;
-    display: flex;
-    gap: 20px;
-    justify-content: space-around;
-    align-items: center;
+  width: 82%;
+  height: auto;
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .card {
-    width: 30%;
-    height: 100%;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    img {
-        height: 70%;
-        width: 90%;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    p {
-        font-size: 15px;
-        color: #9b9b9b;
-    }
+  width: 380px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+.card img {
+  height: 70%;
+  width: 90%;
+}
+
+.card h3 {
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #9b9b9b;
+}
+

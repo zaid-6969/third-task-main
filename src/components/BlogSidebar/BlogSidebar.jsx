@@ -9,10 +9,23 @@ const BlogSidebar = ({
   categoryCounts = {},
   children,
 }) => {
-  const totalCount = Object.values(categoryCounts).reduce(
-    (a, b) => a + b,
-    0
-  );
+  const totalCount = Object.values(categoryCounts).reduce((a, b) => a + b, 0);
+
+  /* 🔥 ONLY COLOR CALCULATION FIX */
+  const min = 39.99;
+  const max = 1999.99;
+
+  const percentage = ((maxPrice - min) / (max - min)) * 100;
+
+  const rangeStyle = {
+    background: `linear-gradient(
+      to right,
+      black 0%,
+      black ${percentage}%,
+      white ${percentage}%,
+      white 100%
+    )`,
+  };
 
   return (
     <div className="blog-sidebar">
@@ -56,21 +69,14 @@ const BlogSidebar = ({
       {onMaxPriceChange && (
         <div className="price-filter">
           <input
-
-           style={{
-            width:"100%"
-           }}
-
             type="range"
             min="39.99"
-            max='1999.99'
+            max="1999.99"
             value={maxPrice}
-            onChange={(e) =>
-              onMaxPriceChange(Number(e.target.value))
-            }
+            onChange={(e) => onMaxPriceChange(Number(e.target.value))}
+            style={rangeStyle}
           />
           <h3>Price: $39.99 - ${maxPrice}</h3>
-
         </div>
       )}
 

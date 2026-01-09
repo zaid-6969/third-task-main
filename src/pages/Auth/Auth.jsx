@@ -13,7 +13,6 @@ const Auth = () => {
     password: "",
   };
 
-
   const admin = {
     name: "admin",
     email: "admin@gmail.com",
@@ -55,58 +54,64 @@ const Auth = () => {
                 </p>
 
                 <form onSubmit={handleSubmit}>
-                  <div className="input-block">
-                    <label htmlFor="name" className="input-label">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      autoComplete="off"
-                      name="name"
-                      id="name"
-                      placeholder="Name"
-                      value={values.name}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
+                  <div style={{ marginBottom: "20px" }}>
+                    <div className="input-block">
+                      <label htmlFor="name" className="input-label">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        autoComplete="off"
+                        name="name"
+                        id="name"
+                        placeholder="Name"
+                        value={values.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
                     {touched.name && errors.name && (
                       <p className="form-error">{errors.name}</p>
                     )}
                   </div>
 
-                  <div className="input-block">
-                    <label htmlFor="email" className="input-label">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      autoComplete="off"
-                      name="email"
-                      id="email"
-                      placeholder="Email"
-                      value={values.email}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
+                  <div style={{ marginBottom: "20px" }}>
+                    <div className="input-block">
+                      <label htmlFor="email" className="input-label">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        autoComplete="off"
+                        name="email"
+                        id="email"
+                        placeholder="Email"
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
                     {touched.email && errors.email && (
                       <p className="form-error">{errors.email}</p>
                     )}
                   </div>
 
-                  <div className="input-block">
-                    <label htmlFor="password" className="input-label">
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      autoComplete="off"
-                      name="password"
-                      id="password"
-                      placeholder="Password"
-                      value={values.password}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
+                  <div style={{ marginBottom: "20px" }}>
+                    <div className="input-block">
+                      <label htmlFor="password" className="input-label">
+                        Password
+                      </label>
+                      <input
+                        type="password"
+                        autoComplete="off"
+                        name="password"
+                        id="password"
+                        placeholder="Password"
+                        value={values.password}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </div>
                     {touched.password && errors.password && (
                       <p className="form-error">{errors.password}</p>
                     )}
@@ -258,7 +263,7 @@ const Wrapper = styled.section`
     padding: 10px 10px 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     transition: 0.3s;
   }
   .input-block input {

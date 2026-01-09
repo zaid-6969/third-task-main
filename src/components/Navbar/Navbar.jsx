@@ -3,6 +3,12 @@ import { NavLink } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { BsBag } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { useDispatch, useSelector } from "react-redux";
+import { clearAll } from "../../features/cart/cartSlice";
+
+
+
+
 
 const AppNavLink = ({ to, label }) => (
   <NavLink
@@ -46,6 +52,10 @@ export const AdminNav = () => {
 };
 
 const Navbar = () => {
+
+  const dispatch = useDispatch(clearAll())
+const selector = useSelector((state) => state.cart.value )
+
   return (
     <div className="nav">
       <ul className="ul1">
@@ -63,7 +73,8 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink to="/cart">
-            <BsBag style={{ color: "grey" }} />
+              <span style={{position:'absolute' , top:'18px',right:'113px' , background:'red', borderRadius:'55px',fontSize:'13px',color:'white',padding:'2px' }} >{selector}</span>
+            <BsBag style={{ color: "grey" }} onClick={()=>dispatch(clearAll())} />
           </NavLink>
         </li>
         <li>
