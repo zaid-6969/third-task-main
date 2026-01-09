@@ -15,6 +15,35 @@ const AppNavLink = ({ to, label }) => (
   </NavLink>
 );
 
+export const AdminNav = () => {
+  return (
+    <>
+      <div className="nav">
+        <ul className="ul1">
+          <li>
+            <h1 style={{ color: "black" }}>soudemy</h1>
+          </li>
+          <AppNavLink to="/admin" label="Admin" />
+          <AppNavLink to="/admintable" label="Product List" />
+          <AppNavLink to="/home" label="Home" />
+        </ul>
+        <ul className="ul2">
+          <li>
+            <FiSearch />
+          </li>
+          <li>
+            <NavLink to="/cart">
+              <BsBag style={{ color: "grey" }} />
+            </NavLink>
+          </li>
+          <li>
+            <RxHamburgerMenu />
+          </li>
+        </ul>
+      </div>
+    </>
+  );
+};
 
 const Navbar = () => {
   return (
@@ -34,7 +63,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink to="/cart">
-            <BsBag style={{color: "grey"}} />
+            <BsBag style={{ color: "grey" }} />
           </NavLink>
         </li>
         <li>
@@ -44,7 +73,5 @@ const Navbar = () => {
     </div>
   );
 };
-
-
 
 export default Navbar;

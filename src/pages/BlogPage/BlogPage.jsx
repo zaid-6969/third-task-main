@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./BlogPage.css";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import loadFurniture from "../../features/furnitures/furnitureSlice";
+import { fetchFurniture } from "../../features/furnitures/furnitureSlice";
 import BlogSidebar from "../../components/BlogSidebar/BlogSidebar";
 import Breadcrumb from "../../components/Breadcrum/Breadcrumb";
 
@@ -14,28 +14,37 @@ const BlogPage = () => {
 
   useEffect(() => {
     if (products.length === 0) {
-      dispatch(loadFurniture(null));
+      dispatch(fetchFurniture());
     }
-  }, [products, dispatch]);
+  }, [products.length, dispatch]);
 
-  if (loading || products.length === 0) return <h2>Loading blog...</h2>;
+  if (loading || products.length === 0) {
+    return <h2>Loading blog...</h2>;
+  }
 
-  const product = products.find((p) => p.id === Number(id));
+  const product = products.find((p) => String(p.id) === id);
 
-  if (!product) return <h2>Blog Not Found</h2>;
+  if (!product) {
+    return <h2>Blog Not Found</h2>;
+  }
 
   return (
-
     <div className="blog-page">
       <div className="left-section">
         <Breadcrumb />
+
         <div className="img-card">
-          <img src={product.images.front} alt="" className="main-image" />
+          <img
+            src={product.images.front}
+            alt={product.name}
+            className="main-image"
+          />
         </div>
+
         <div className="post-meta">
-          <span>Sep 26, 2022</span> |
-          <span>{product.category}</span> |
-          <span>By Admin</span> |
+          <span>Sep 26, 2022</span> | 
+          <span>{product.category}</span> | 
+          <span>By Admin</span> | 
           <span>3 Comments</span>
         </div>
 
@@ -46,7 +55,7 @@ const BlogPage = () => {
         </p>
 
         <blockquote>
-          “{product.design}” — this sofa is one of our trending models.
+          “{product.design}” — this furniture is one of our trending models.
         </blockquote>
 
         <p className="post-text">
@@ -67,7 +76,9 @@ const BlogPage = () => {
 
           <div className="nav-card">
             <p className="direction">Next →</p>
-            <p className="label">Your office should only have natural material</p>
+            <p className="label">
+              Your office should only have natural material
+            </p>
           </div>
         </div>
 
@@ -78,7 +89,6 @@ const BlogPage = () => {
           <input type="email" placeholder="Your email" />
           <button className="submit-btn">Submit</button>
         </div>
-
       </div>
 
       <div className="right-section">
