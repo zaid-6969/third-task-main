@@ -56,7 +56,7 @@ const ProductPage = () => {
       <Breadcrumb />
 
       <div className="top-section">
-        <ProductGallery images={galleryImages} />
+       <ProductGallery images={galleryImages} />
         <ProductInfo product={product} />
       </div>
 

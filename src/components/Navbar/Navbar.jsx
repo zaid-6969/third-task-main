@@ -73,7 +73,7 @@ const selector = useSelector((state) => state.cart.value )
         </li>
         <li>
           <NavLink to="/cart" onClick={()=>dispatch(clearAll())}>
-              <span style={{position:'absolute' , top:'18px',right:'113px' , background:'red', borderRadius:'55px',fontSize:'13px',color:'white',padding:'2px' }} >{selector}</span>
+            { selector > 0 &&  <span style={{position:'absolute' , top:'18px',right:'113px' , background:'red', borderRadius:'55px',fontSize:'13px',color:'white',padding:'2px' }} >{selector}</span>}
             <BsBag style={{ color: "grey" }}  />
           </NavLink>
         </li>

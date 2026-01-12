@@ -1,32 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+// import "./ProductGallery.css";
 
 const ProductGallery = ({ images = [] }) => {
-  const [mainImage, setMainImage] = useState(images[0]);
+  const galleryItems = images.map((img) => ({
+    original: img,
+    thumbnail: img,
+  }));
 
   return (
-    <div className="gallery-container">
-      <div className="thumbnail-list">
-        {images.map((img, i) => {
-          if (i === 0) return null; // 🔥 skip first image
-
-          return (
-            <img
-              key={i}
-              src={img}
-              alt="thumb"
-              className="thumb"
-              onClick={() => setMainImage(img)}
-            />
-          );
-        })}
-      </div>
-
-
-      <div className="main-image-box">
-        <img src={mainImage} alt="main" className="main-image" />
-      </div>
+    <div className="product-gallery">
+      <ImageGallery
+        items={galleryItems}
+        thumbnailPosition="left"
+        showPlayButton={false}
+        showFullscreenButton={true}
+        showNav={false}
+        showIndex={true}
+        lazyLoad={true}
+        slideOnThumbnailOver={true}
+      />
     </div>
   );
 };
 
-export default ProductGallery;  
+export default ProductGallery;

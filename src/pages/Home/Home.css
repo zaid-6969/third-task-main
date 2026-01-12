@@ -258,10 +258,9 @@ body {
     min-height: 60vh;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    /* padding: 0 80px; */
 }
 
 .row.reverse {
@@ -269,7 +268,7 @@ body {
     min-height: 60vh;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around ;
     flex-wrap: wrap;
     align-items: center;
 }

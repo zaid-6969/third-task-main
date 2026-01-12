@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-
+import { ToastContainer } from "react-toastify";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Blog from "./pages/Blog/Blog";
@@ -26,10 +26,10 @@ const App = () => {
     <div>
       <ScrollToTop />
 
-      {/* Admin Navbar */}
+     
       {isAdminPage && <AdminNav />}
 
-      {/* User Navbar */}
+     
       {!isAuthPage && !isAdminPage && <Navbar />}
 
       <Routes>
@@ -64,6 +64,11 @@ const App = () => {
 
       {/* Footer */}
       {!isAuthPage && !isAdminPage && <Footer />}
+
+        <ToastContainer
+        position="top-right"
+        autoClose={2000}
+      />
     </div>
   );
 };

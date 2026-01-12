@@ -143,3 +143,72 @@
         width: 100%;
     }
 }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.checkout-modal,
+.bill-modal {
+  background: #fff;
+  color: #111;
+  width: 420px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.checkout-items,
+.bill-items {
+  margin: 15px 0;
+}
+
+.checkout-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+}
+
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.payment-method label {
+  display: block;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button,
+.confirm-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background: #111;
+  color: #fff;
+}
+
+.bill-modal h2 {
+  margin-bottom: 10px;
+}
